@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NegosYouth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         INTRO SCREEN (background + hero)
+    =========================================== -->
+
+    <div id="introScreen" class="intro-screen">
+
+        <div class="intro-overlay"></div>
+
+        <!-- TOP NAVIGATION -->
+        <div class="intro-nav">
+            <div class="nav-logo">NegosYouth</div>
+            <div class="nav-account" id="navAccount"></div>
+        </div>
+
+        <!-- MAIN TITLE -->
+        <div class="hero-content">
+
+            <p class="small-title" id="introGreeting">WELCOME TO THE GAME</p>
+
+            <h1>NegosYouth</h1>
+
+            <p class="hero-description">
+                Build your business. Make your decisions. Earn your way to success.
+            </p>
+
+            <button id="introStartButton">PLAY</button>
+
+        </div>
+
+        <!-- BUSINESS CHOICE (shown after log in) -->
+        <div id="businessPicker" class="business-picker" hidden>
+
+            <h2>Choose your business</h2>
+
+            <p class="business-sub">Pick what you want to sell. You can change it anytime.</p>
+
+            <div class="business-options">
+
+                <button type="button" class="business-card" data-business="siomai">
+                    <img class="business-icon" src="images/siomai.png" alt="">
+                    <span class="business-name">Siomai</span>
+                </button>
+
+                <button type="button" class="business-card" data-business="bbq">
+                    <img class="business-icon pixel" src="images/bbq.png" alt="">
+                    <span class="business-name">BBQ</span>
+                </button>
+
+                <button type="button" class="business-card" data-business="cafe">
+                    <img class="business-icon pixel" src="images/cafe.png" alt="">
+                    <span class="business-name">Cafe</span>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- GAME LAYOUT OUTLINE (shown after a business is chosen) -->
+        <div id="gameLayout" class="game-layout" hidden>
+
+            <div class="layout-box layout-screen" id="gameScreen">
+                <img class="screen-image" src="pixel park.png" alt="">
+            </div>
+
+            <div class="layout-stats">
+                <div class="layout-box"><span class="layout-label">Money</span></div>
+                <div class="layout-box"><span class="layout-label">Inventory</span></div>
+                <div class="layout-box"><span class="layout-label">Reputation</span></div>
+                <div class="layout-box"><span class="layout-label">Shop Health</span></div>
+                <div class="layout-box"><span class="layout-label">Network</span></div>
+            </div>
+
+            <div class="layout-box layout-choices" id="gameChoices">
+                <span class="layout-label">Loading your shop…</span>
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+             LOG IN / SIGN UP
+        =========================================== -->
+
+        <div id="authOverlay" class="auth-overlay" aria-hidden="true">
+
+            <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+
+                <button type="button" id="authClose" class="auth-close" aria-label="Close">✕</button>
+
+                <img class="auth-avatar" src="avatar.jpg" alt="">
+
+                <h2 id="authTitle">PLAYER LOGIN</h2>
+
+                <p id="authSubtitle" class="auth-subtitle">
+                    Log in to continue your business journey.
+                </p>
+
+                <div class="auth-tabs" role="tablist">
+                    <button type="button" id="tabLogin" class="auth-tab active" role="tab" aria-selected="true">LOG IN</button>
+                    <button type="button" id="tabSignup" class="auth-tab" role="tab" aria-selected="false">SIGN UP</button>
+                </div>
+
+                <form id="authForm" novalidate>
+
+                    <label class="auth-field">
+                        <span>Username</span>
+                        <input type="text" id="authUsername" maxlength="16"
+                               autocomplete="username" autocapitalize="none"
+                               spellcheck="false" placeholder="e.g. juan_negosyante">
+                    </label>
+
+                    <label class="auth-field">
+                        <span>Password</span>
+                        <div class="auth-pw">
+                            <input type="password" id="authPassword"
+                                   autocomplete="current-password" placeholder="At least 6 characters">
+                            <button type="button" id="togglePw" class="auth-eye"
+                                    aria-label="Show password">👁</button>
+                        </div>
+                    </label>
+
+                    <label class="auth-field" id="confirmField" hidden>
+                        <span>Confirm password</span>
+                        <input type="password" id="authConfirm"
+                               autocomplete="new-password" placeholder="Type it again">
+                    </label>
+
+                    <div id="authError" class="auth-error" role="alert" hidden></div>
+
+                    <button type="submit" id="authSubmit" class="auth-submit">LOG IN</button>
+
+                </form>
+
+                <p class="auth-switch" id="authSwitch"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="siomai.js"></script>
+
+</body>
+
+</html>
